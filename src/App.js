@@ -32,7 +32,6 @@ function App() {
 
   </BrowserRouter>
 
-  App File
   </ThemeProvider>
 
   </>
