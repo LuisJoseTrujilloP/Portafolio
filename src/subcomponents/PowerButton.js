@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components'
-import PowerBtn from '../components/AllSvgs'
-
+import PowerBtn from '../components/AllSvgs';
 
 
 const Power = styled.button`
