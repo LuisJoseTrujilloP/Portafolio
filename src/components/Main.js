@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
 import PowerButton from '../subComponents/PowerButton'
+
+
 const MainContainer = styled.div`
 background:${props => props.theme.text}
 width: 100vw;
