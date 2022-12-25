@@ -1,36 +1,38 @@
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from "./globalStyles"
-import { darkTheme } from "./components/Themes"
+import { Routes, Route, useLocation } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { LightTheme } from "./components/Themes";
+import { AnimatePresence } from "framer-motion";
+import GlobalStyle from "./globalStyles";
+
+//components 
+import Main from './components/Main';
+import BlogPage from './components/BlogPage';
+import WorkPage from './components/WorkPage';
+import MySkillsPage from './components/MySkillsPage';
+import AboutPage from './components/AboutPage';
+import SoundBar from "./subComponents/SoundBar";
+
+
 
 function App() {
-  return <>
-
-
+  const location = useLocation();
+  return     <>
   <GlobalStyle />
-      <ThemeProvider theme={lightTheme}>
-        <AnimatePresence mode='wait'>
-          {/* Changed Switch to Routes */}
 
-          <Routes key={location.pathname} location={location} >
-            {/* Changed component to element */}
-
-            <Route path="/" element={<Main />} />
-
-            <Route path="/about" element={<AboutPage />} />
-
-            <Route path="/blog" element={<BlogPage />} />
-
-            <Route path="/work" element={<WorkPage />} />
-
-            <Route path="/skills" element={<MySkillsPage />} />
-            {/* Below is to catch all the other routes and send the user to main component,
-you can add custom 404 component or message instead of Main component*/}
-            <Route path="*" element={<Main />} />
-          </Routes>
-        </AnimatePresence>
-      </ThemeProvider>
-
-  </>  
+  <ThemeProvider theme={LightTheme}>
+    <SoundBar />
+    <AnimatePresence mode='wait'>
+        <Routes key={location.pathname} location={location} >
+        <Route path="/" element={<Main />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/skills" element={<MySkillsPage />} />
+        <Route path="*" element={<Main />} />
+      </Routes>
+    </AnimatePresence>
+  </ThemeProvider>
+</>
 }
 
 export default App

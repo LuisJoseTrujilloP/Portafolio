@@ -1,4 +1,4 @@
-const lightTheme = {
+const LightTheme = {
 
     body:"#FCF6F4",
     text:"#000000",
@@ -7,7 +7,7 @@ const lightTheme = {
     textRgba:"0,0,0",
 }
 
-const darkTheme = {
+const DarkTheme = {
 
     body:"#000000",
     text:"#FCF6F4",
@@ -16,4 +16,4 @@ const darkTheme = {
     bodyRgba:"0,0,0",
 }
 
-export { lightTheme, darkTheme }
+export { LightTheme, DarkTheme }
