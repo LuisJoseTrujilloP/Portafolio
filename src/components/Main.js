@@ -32,6 +32,7 @@ const Main = () => {
         <MainContainer>
             <Container>
             <PowerButton />
+            <LogoComponent />
             </Container>
         </MainContainer>
     );
