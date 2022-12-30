@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
 import PowerButton from '../subComponents/PowerButton'
+import SocialIcons from '../subComponents/SocialIcons'
 
 
 const MainContainer = styled.div`
@@ -33,6 +34,7 @@ const Main = () => {
             <Container>
             <PowerButton />
             <LogoComponent />
+            <SocialIcons />
             </Container>
         </MainContainer>
     );
