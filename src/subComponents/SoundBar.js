@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import music from '../assets/audio/u-said-it-v13-1167.mp3'
+import music from "../assets/audio/u-said-it-v13-1167.mp3"
 
 const Box = styled.div`
-display: flex;
-cursor: pointer;
-position: relative;
-left: 8rem;
-top: 3rem;
+display:flex;
+cursor:pointer;
+position:fixed;
+left:8rem;
+top:3rem;
 z-index:10;
 
 &>*:nth-child(1){
@@ -30,33 +30,34 @@ z-index:10;
 
 const play = keyframes`
 0%{
-    transform: scaleY(1);
+    transform:scaleY(1);
 }
 50%{
-    transform: scaleY(2);
+    transform:scaleY(2);
 }
 100%{
-    transform: scaleY(3);
+    transform:scaleY(1);
 }
 `
-
 const Line = styled.span`
 background: ${props => props.theme.text};
-border: 1px solid ${props => props.theme.body}
+border: 1px solid ${props => props.theme.body};
 
 animation:${play} 1s ease infinite;
-animation-play-state: ${props => props.click ? "running" : "paused"}
+animation-play-state: ${props => props.click ? "running" : "paused"};
 height: 1rem;
 width: 2px;
-margin: 0 0.1rem
+margin:0 0.1rem
 `
 
-const SongBar = () => {
+const SoundBar = () => {
+
     const ref = useRef(null);
     const [click, setClick] = useState(false);
 
     const handleClick = () => {
-        setClick(!click)
+        setClick(!click);
+
         if(!click){
             ref.current.play();
         }else{
@@ -70,11 +71,9 @@ const SongBar = () => {
             <Line click={click}/>
             <Line click={click}/>
             <Line click={click}/>
-
-            <audio src={music} ref={ref} loop />
+            <audio src={music} ref={ref}  loop />
         </Box>
     )
 }
 
-
-export default SongBar
+export default SoundBar

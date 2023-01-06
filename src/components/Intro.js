@@ -4,8 +4,6 @@ import {motion} from 'framer-motion'
 import Me from '../assets/Images/profile-img.png'
 
 
-
-
 const Box = styled(motion.div)`
 
 position: absolute;
@@ -15,7 +13,7 @@ transform: translate(-50%, -50%);
 
 
 
-width: 55vw;
+width: 60vw;
 height: 40vh;
 display: flex;
 
@@ -51,11 +49,10 @@ display: flex;
     height: auto;
 }
 `
-
 const Text = styled.div`
 font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
-padding: 2rem;
+padding: 1rem;
 cursor: pointer;
 
 display: flex;
@@ -71,7 +68,6 @@ justify-content: space-evenly;
 
 
 `
-
 const Intro = () => {
     return (
         <Box

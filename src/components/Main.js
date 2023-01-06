@@ -36,7 +36,7 @@ right: calc(1rem + 2vw);
 text-decoration: none;
 z-index:1;
 `
-const BLOG = styled(NavLink)`
+const CERT = styled(NavLink)`
 color: ${props => props.theme.text};
 position: absolute;
 top: 50%;
@@ -126,9 +126,6 @@ transition: height 0.5s ease, width 1s ease 0.5s;
 `
 
 
-
-
-
 const Main = () => {
 
     const [click, setClick] = useState(false);
@@ -165,7 +162,7 @@ const Main = () => {
                     Say hi..
                 </motion.h2>
             </Contact>
-            <BLOG to="/blog">
+            <CERT to="/cert">
                 <motion.h2
                 initial={{
                     y:-200,
@@ -178,9 +175,9 @@ const Main = () => {
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
-                    Blog
+                    Studies
                 </motion.h2>
-            </BLOG>
+            </CERT>
             <WORK to="/work" click={+click}>
                 <motion.h2
                 initial={{
@@ -236,7 +233,7 @@ const Main = () => {
             </Container>
             {click ? <Intro click={click} /> : null }
         </MainContainer>
-    );
+    )
 }
 
-export default Main;
+export default Main
