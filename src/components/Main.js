@@ -10,6 +10,8 @@ import Intro from './Intro'
 ;
 
 
+
+
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
 width: 100vw;
@@ -145,7 +147,7 @@ const Main = () => {
                 <span>click here</span>
             </Center>
 
-            <Contact target="_blank" to={{pathname:"mailto:luisjosetrujillodeveloper@gmail.com"}}>
+            <Contact target="_blank" href="mailto:codebucks27@gmail.com">
                 <motion.h2
                 initial={{
                     y:-200,
@@ -175,7 +177,7 @@ const Main = () => {
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
-                    Studies
+                    CERT
                 </motion.h2>
             </CERT>
             <WORK to="/work" click={+click}>

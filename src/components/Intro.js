@@ -37,6 +37,7 @@ background-size: 100% 2px;
 `
 const SubBox = styled.div`
 width: 50%;
+heigh: 5%;
 position: relative;
 display: flex;
 
@@ -85,8 +86,8 @@ const Intro = () => {
             <SubBox>
                 <motion.div
                 initial={{opacity:0}}
-        animate={{opacity: 1}}
-        transition={{ duration:1, delay:2 }}
+                animate={{opacity: 1}}
+                transition={{ duration:1, delay:2 }}
                 >
                     <img className="pic" src={Me} alt="Profile Pic" />
                 </motion.div>
