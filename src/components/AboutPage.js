@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {DarkTheme} from './Themes';
-
+import { motion } from 'framer-motion'
 
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
@@ -9,6 +9,17 @@ import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../subComponents/ParticleComponent';
 import BigTitle from '../subComponents/BigTitle'
 import astronaut from '../assets/Images/spaceman.png'
+
+
+
+const MainContainer = styled(motion.div)`
+
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+
+`
 
 const Box = styled.div`
 background-color: ${props => props.theme.body};
@@ -56,27 +67,47 @@ const Main =  styled.div`
 `
 
 
+const container = {
 
+    hidden: {opacity:0},
+    show: {
+      opacity:1,
+  
+      transition:{
+        staggerChildren: 0.5,
+        duration: 0.5,
+      }
+    }
+  
+  }
 
 const AboutPage = () => {
     return (
-        <ThemeProvider theme={DarkTheme}>
-<Box>
+        <MainContainer
+        variants={container}
+        initial='hidden'
+        animate='show'      
+        exit={{
+            opacity:0, transition:{duration: 0.5}
+        }}
+        >        <ThemeProvider theme={DarkTheme}>
 
-<LogoComponent theme='dark'/>
-<SocialIcons theme='dark'/>
-<PowerButton />
-<ParticleComponent theme='dark' />
+            <Box>
 
-        <Spaceman>
-            <img src={astronaut} alt="spaceman" />
-        </Spaceman>    
-        <Main>
-        I'm a front-end developer located in Colombia. I love to create simple yet beautiful websites with great user experience.
-<br /> <br/>
-I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer. I love to lisent and play music.
-<br/> <br/>
-I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
+            <LogoComponent theme='dark'/>
+            <SocialIcons theme='dark'/>
+            <PowerButton />
+            <ParticleComponent theme='dark' />
+
+                    <Spaceman>
+                        <img src={astronaut} alt="spaceman" />
+                    </Spaceman>    
+                    <Main>
+                    I'm a front-end developer located in Colombia. I love to create simple yet beautiful websites with great user experience.
+            <br /> <br/>
+            I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer. I love to write songs and read books.
+            <br/> <br/>
+            I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
         </Main>
 
         <BigTitle text="ABOUT" top="10%" left="5%" />
@@ -85,7 +116,7 @@ I believe everything is an Art when you put your consciousness in it. You can co
         </Box>
 
         </ThemeProvider>
-        
+</MainContainer>       
     )
 }
 

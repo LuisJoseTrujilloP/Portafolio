@@ -9,6 +9,29 @@ import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../subComponents/ParticleComponent';
 import BigTitle from '../subComponents/BigTitle'
+import { motion } from 'framer-motion';
+
+
+const MainContainer = styled(motion.div)`
+
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+
+`
+
+const container = {
+
+  hidden: {opacity:0},
+  show: {
+    opacity:1,
+    transition:{
+      staggerChildren: 0.5,
+      duration: 0.5,
+    }
+  }
+}
 
 const Box = styled.div`
 background-color: ${props => props.theme.body};
@@ -82,73 +105,85 @@ ul,p{
 }
 `
 
+
+
 const MySkillsPage = () => {
-    return (
-        <ThemeProvider theme={lightTheme}>
-<Box>
+  return (
 
-<LogoComponent theme='light'/>
-<SocialIcons theme='light'/>
-<PowerButton />
-<ParticleComponent theme='light' />
-            <Main>
-<Title>
-    <Design width={40} height={40} /> Designer
-</Title>
-<Description>
-I love to create design which speaks, Keep it clean, minimal and simple.
-</Description>
-<Description>
-<strong>I like to Design</strong>
-<ul>
-    <li>
-        Web Design
-    </li>
-    <li>
-        Mobile Apps
-    </li>
-</ul>
-</Description>
-<Description>
-<strong>Tools</strong>
-<ul>
-    <li>
-       Figma
-    </li>
-    
-</ul>
-</Description>
+    <MainContainer
+      variants={container}
+      initial='hidden'
+      animate='show'      
+      exit={{
+          opacity:0, transition:{duration: 0.5}
+      }}
+    >
+      <ThemeProvider theme={lightTheme}>
+        <Box>
 
-            </Main>
-            <Main>
-<Title>
-    <Develope width={40} height={40} /> Frontend Developer
-</Title>
-<Description>
-I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.
-</Description>
-<Description>
-<strong>Skills</strong>
-<p>
-Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase etc.
-</p>
-</Description>
-<Description>
-<strong>Tools</strong>
-<p>
-VScode, Github, Codepen etc.
-</p>
-</Description>
+          <LogoComponent theme='light'/>
+          <SocialIcons theme='light'/>
+          <PowerButton />
+          <ParticleComponent theme='light' />
+                      <Main>
+          <Title>
+              <Design width={40} height={40} /> Designer
+          </Title>
+          <Description>
+            I love to create design which speaks, Keep it clean, minimal and simple.
+          </Description>
+          <Description>
+          <strong>I like to Design</strong>
+          <ul>
+              <li>
+                  Web Design
+              </li>
+              <li>
+                  Mobile Apps
+              </li>
+          </ul>
+          </Description>
+          <Description>
+          <strong>Tools</strong>
+          <ul>
+              <li>
+                Figma
+              </li>
+              
+          </ul>
+          </Description>
 
-            </Main>
+          </Main>
+          <Main>
+          <Title>
+              <Develope width={40} height={40} /> Frontend Developer
+          </Title>
+          <Description>
+            I love to create design which speaks, Keep it clean, minimal and simple.
+          </Description>
+          <Description>
+          <strong>Skills</strong>
+          <p>
+          Html, Css, Js, React, Redux, Sass, Tailwind, Firebase etc.
+          </p>
+          </Description>
+          <Description>
+          <strong>Tools</strong>
+          <p>
+            VScode, Github, Codepen etc.
+          </p>
+          </Description>
 
-            <BigTitle text="SKILLS" top="80%" right="30%" />
+          </Main>
+
+          <BigTitle text="SKILLS" top="80%" right="30%" />
 
         </Box>
 
-        </ThemeProvider>
-        
-    )
+      </ThemeProvider>
+    </MainContainer>
+    
+  )
 }
 
 export default MySkillsPage

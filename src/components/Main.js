@@ -10,8 +10,6 @@ import Intro from './Intro'
 ;
 
 
-
-
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
 width: 100vw;
@@ -30,7 +28,7 @@ const Container = styled.div`
 padding: 2rem;
 `
 
-const Contact = styled(NavLink)`
+const Contact = styled.a`
 color: ${props => props.theme.text};
 position: absolute;
 top: 2rem;
@@ -147,7 +145,7 @@ const Main = () => {
                 <span>click here</span>
             </Center>
 
-            <Contact target="_blank" href="mailto:codebucks27@gmail.com">
+            <Contact target="_blank" href="mailto:luisjosetrujillodeveloper@gmail.com">
                 <motion.h2
                 initial={{
                     y:-200,
@@ -177,7 +175,7 @@ const Main = () => {
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 >
-                    CERT
+                    Cert
                 </motion.h2>
             </CERT>
             <WORK to="/work" click={+click}>

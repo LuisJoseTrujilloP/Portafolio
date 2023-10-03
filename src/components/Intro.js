@@ -12,9 +12,8 @@ top: 50%;
 transform: translate(-50%, -50%);
 
 
-
-width: 60vw;
-height: 40vh;
+width: 65vw;
+height:55vh;
 display: flex;
 
 
@@ -37,7 +36,6 @@ background-size: 100% 2px;
 `
 const SubBox = styled.div`
 width: 50%;
-heigh: 5%;
 position: relative;
 display: flex;
 
@@ -50,10 +48,11 @@ display: flex;
     height: auto;
 }
 `
+
 const Text = styled.div`
 font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
-padding: 1rem;
+padding: 2rem;
 cursor: pointer;
 
 display: flex;
@@ -68,7 +67,9 @@ justify-content: space-evenly;
 }
 
 
+
 `
+
 const Intro = () => {
     return (
         <Box
@@ -86,8 +87,8 @@ const Intro = () => {
             <SubBox>
                 <motion.div
                 initial={{opacity:0}}
-                animate={{opacity: 1}}
-                transition={{ duration:1, delay:2 }}
+        animate={{opacity: 1}}
+        transition={{ duration:1, delay:2 }}
                 >
                     <img className="pic" src={Me} alt="Profile Pic" />
                 </motion.div>
@@ -96,4 +97,4 @@ const Intro = () => {
     )
 }
 
-export default Intro;
+export default Intro

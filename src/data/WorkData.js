@@ -1,21 +1,33 @@
+// work data
+
 export const Work = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
-        tags:["react","gsap","styledComponents"],
+        name:"TodoApp",
+        description:"It is build on top of the React JS, with framer-motion for smooth animations.",
+        tags:["react","framer-motion","Vite"],
         
-        demo:"https://agency-website-eta.vercel.app/",
-        github:"https://github.com/codebucks27/Agency-website"
+        demo:"https://luisjosetrujillop.github.io/TodoList/",
+        github:"https://github.com/LuisJoseTrujilloP/TodoList"
     },
     {
         id:2,
-        name:"TodoList with nice looking design",
-        description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
-        tags:["react","Css"],
-        demo:"https://luisjosetrujillop.github.io/TodoList/",
-        github:"https://github.com/LuisJoseTrujilloP/TodoList"
+        name:"Calculator with JavaScript",
+        description:"A Calculator build in Html Css and Js. With unique functionalities.",
+        tags:["html","css"],
         
+        demo:"https://jscalculatorltp.netlify.app/",
+        github:"https://github.com/LuisJoseTrujilloP/calculator"
+        
+    },
+    {
+        id:3,
+        name:"Spotify Clone with RapidAPI",
+        description:"A clone of spotify build using ReactJS. With realtime fetching of articles from dev.to using API.",
+        tags:["react","RapidAPI","Taiilwind"],
+        
+        demo:"https://music-app-ltp.netlify.app/",
+        github:"https://github.com/LuisJoseTrujilloP/RapidAPI"
     },
     
   

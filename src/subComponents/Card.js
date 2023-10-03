@@ -1,86 +1,127 @@
-import React, { useEffect, useRef } from 'react'
-import styled from 'styled-components'
-import { Anchor, Link } from '../components/AllSvgs'
+import { motion } from 'framer-motion';
+import React from 'react'
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { Github } from '../components/AllSvgs';
 
-const Container = styled.div`
-position: relative;
-`
-const Slider = styled.div`
-position: fixed;
-top: 0;
-right: 2rem;
+
+
+const Box = styled(motion.li)`
+width: 16rem;
+height: 40vh;
+background-color: ${props => props.theme.text};
+color:${props => props.theme.body};
+padding: 1.5rem 2rem;
+margin-right: 8rem;
+border-radius: 0 50px 0 50px;
 display: flex;
-justify-content: center;
-align-items: center;
 flex-direction: column;
-transform: translateY(-100%);
+justify-content: space-between;
+border: 1px solid ${props => props.theme.body};
+transition: all 0.2s ease;
 
-.chain{
-transform: rotate(135deg);
+&:hover{
+background-color: ${props => props.theme.body};
+color:${props => props.theme.text};
+border: 1px solid ${props => props.theme.text};
 
+}
+`
+const Title = styled.h2`
+font-size: calc(1em + 0.5vw);
+`
+
+const Description = styled.h2`
+font-size: calc(0.8em + 0.3vw);
+font-family: 'Karla',sans-serif;
+font-weight: 500;
+`
+const Tags = styled.div`
+border-top: 2px solid ${props =>props.theme.body};
+padding-top: 0.5rem;
+display:flex;
+flex-wrap:wrap;
+${Box}:hover &{
+border-top: 2px solid ${props =>props.theme.text};
+}
+`
+const Tag = styled.span`
+margin-right:1rem;
+font-size:calc(0.8em + 0.3vw);
+`
+
+const Footer = styled.footer`
+display: flex;
+justify-content: space-between;
+`
+
+const Link = styled.a`
+background-color: ${props =>props.theme.body};
+color: ${props =>props.theme.text};
+text-decoration: none;
+padding:0.5rem calc(2rem + 2vw);
+border-radius: 0 0 0 50px;
+font-size:calc(1em + 0.5vw);
+
+${Box}:hover &{
+    background-color: ${props =>props.theme.text};
+    color: ${props =>props.theme.body};
+
+}
+`
+
+const Git = styled.a`
+color: inherit;
+text-decoration: none;
+${Box}:hover &{
+    &>*{
+        fill:${props =>props.theme.text};
+    }
 }
 
 `
 
-const PreDisplay = styled.div`
-position: absolute;
-top:0;
-right: 2rem;
-`
-
-
-const AnchorComponent = (props) => {
-
-    const ref = useRef(null);
-    const hiddenRef = useRef(null);
-
-    useEffect(() => {
-        
-        const handleScroll = () => {
-
-            let scrollPosition = window.pageYOffset;
-            let windowSize = window.innerHeight;
-            let bodyHeight = document.body.offsetHeight;
-            
-            let diff = Math.max(bodyHeight - (scrollPosition + windowSize) )
-            //diff*100/scrollposition
-            let diffP = (diff * 100) / (bodyHeight - windowSize);
-
-            ref.current.style.transform = `translateY(${-diffP}%)`
-
-            if(window.pageYOffset > 5){
-                hiddenRef.current.style.display = 'none'
-            }else{
-                hiddenRef.current.style.display = 'block'
-
-            }
+// Framer motion configuration
+const Item = {
+    hidden:{
+        scale:0
+    },
+    show:{
+        scale:1,
+        transition: {
+            type: 'spring',
+            duration: 0.5
         }
+    }
+}
 
-        window.addEventListener('scroll', handleScroll)
+const Card = (props) => {
 
-        return () =>  window.removeEventListener('scroll', handleScroll)
-
-
-    }, [])
-
-
+    const {id, name, description, tags, demo, github} = props.data;
 
     return (
-        <Container>
-        <PreDisplay ref={hiddenRef} className='hidden'>
-    
-        <Anchor width={70} height={70} fill='currentColor'/>
-    </PreDisplay>
-            <Slider ref={ref}>
-                {
-                    [...Array(props.number)].map((x,id) => {
-                        return <Link key={id} width={25} height={25} fill='currentColor' className="chain" />
+        <Box key={id} variants={Item}>
+            <Title>{name}</Title>
+            <Description>
+                {description}
+            </Description>
+            <Tags>
+            {
+                    tags.map((t,id) => {
+                        return <Tag key={id}>#{t}</Tag>
                     })
                 }
-                <Anchor width={70} height={70} fill='currentColor'/>
-            </Slider>
-        </Container>
+            </Tags>
+            <Footer>
+                <Link href={demo} target="_blank">
+                    Visit
+                </Link>
+                <Git  href={github}  target="_blank">
+                    <Github width={30} height={30} />
+                </Git>
+            </Footer>
+        </Box>
     )
 }
 
-export default AnchorComponent
+export default Card

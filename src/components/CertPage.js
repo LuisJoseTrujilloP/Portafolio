@@ -68,29 +68,30 @@ const CertPage = () => {
 
     return (
         <MainContainer
-            variants={container}
-            initial='hidden'
-            animate='show'
-            exit={{
-                opacity:0, transition:{duration: 0.5}
-            }}
+        variants={container}
+        initial='hidden'
+        animate='show'
+        exit={{
+            opacity:0, transition:{duration: 0.5}
+        }}
         >
             <Container>
-            <LogoComponent />
-            <PowerButton />
-            <SocialIcons />
-            <AnchorComponent number={numbers}/>
-            <Center>
-            <Grid>
-            {
-                Certs.map(cert => {
-                    return <CertComponent key={cert.id} cert={cert} />
-                })
-            }
-            </Grid>
+                <LogoComponent />
+                <PowerButton />
+                <SocialIcons />
+                <AnchorComponent number={numbers}/>
+<Center>
+<Grid>
 
-            </Center>
-                <BigTitle text="CERT" top="5rem" left="5rem" />
+{
+    Certs.map(cert => {
+        return <CertComponent key={cert.id} cert={cert} />
+    })
+}
+</Grid>
+
+</Center>
+<BigTitle text="BLOG" top="5rem" left="5rem" />
             </Container>
         </MainContainer>
     )
