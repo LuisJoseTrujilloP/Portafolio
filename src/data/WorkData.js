@@ -24,11 +24,19 @@ export const Work = [
         id:3,
         name:"Spotify Clone with RapidAPI",
         description:"A clone of spotify build using ReactJS. With realtime fetching of articles from dev.to using API.",
-        tags:["react","RapidAPI","Taiilwind"],
+        tags:["react","RapidAPI","Tailwind"],
         
         demo:"https://music-app-ltp.netlify.app/",
         github:"https://github.com/LuisJoseTrujilloP/RapidAPI"
     },
-    
+    {
+        id:4,
+        name:"Ecommerce build with Vue and Tailwind",
+        description:"A react ecommerce app with functional local Registration, checkout menu and more",
+        tags:["React","Vue","Tailwind"],
+        
+        demo:"https://coruscating-fenglisu-c46173.netlify.app/",
+        github:"https://github.com/LuisJoseTrujilloP/react-vue-ecommerce"
+    },
   
 ] 
