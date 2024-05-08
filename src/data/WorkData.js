@@ -8,7 +8,7 @@ export const Work = [
         tags:["React","Vue","Tailwind"],
         
         demo:"https://coruscating-fenglisu-c46173.netlify.app/",
-        github:"https://github.com/LuisJoseTrujilloP/react-vue-ecommerce" 
+        github:"https://github.com/LuisTrujilloP/react-vue-ecommerce" 
     },
     {
         id:2,
@@ -17,7 +17,7 @@ export const Work = [
         tags:["react","RapidAPI","Tailwind"],
         
         demo:"https://music-app-ltp.netlify.app/",
-        github:"https://github.com/LuisJoseTrujilloP/RapidAPI"
+        github:"https://github.com/LuisTrujilloP/RapidAPI"
     },
     {
         id:3,
@@ -26,15 +26,15 @@ export const Work = [
         tags:["html","css"],
         
         demo:"https://jscalculatorltp.netlify.app/",
-        github:"https://github.com/LuisJoseTrujilloP/calculator"
+        github:"https://github.com/LuisTrujilloP/calculator"
     },
     {
         id:4,
         name:"TodoApp",
         description:"It is build on top of the React JS, with framer-motion for smooth animations.",
         tags:["react","framer-motion","Vite"],
-        demo:"https://luisjosetrujillop.github.io/TodoList/",
-        github:"https://github.com/LuisJoseTrujilloP/TodoList"
+        demo:"https://luistrujillop.github.io/TodoList/",
+        github:"https://github.com/LuisTrujilloP/TodoList"
     },
   
 ] 
